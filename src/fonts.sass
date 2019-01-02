@@ -1,0 +1,36 @@
+@import "./styles/conf/_fonts.sass"
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf)
+  $src: null
+  $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_"))
+  $formats: (otf: "opentype", ttf: "truetype")
+
+  @each $ext in $exts 
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma)
+  
+  
+
+  @font-face 
+    font-family: quote($name)
+    font-style: $style
+    font-weight: $weight
+    src: $src
+    font-display: swap
+  
+
+$fontdir: './fonts/'
+
+@include font-face($mainFontName, '#{$fontdir}ProximaNova/ProximaNova-Regular', normal, normal)
+@include font-face($mainFontName, '#{$fontdir}ProximaNova/ProximaNova-RegularIt', normal, italic)
+@include font-face($mainFontName, '#{$fontdir}ProximaNova/ProximaNova-Semibold', 600, normal)
+@include font-face($mainFontName, '#{$fontdir}ProximaNova/ProximaNova-Bold', bold, normal)
+@include font-face($mainFontName, '#{$fontdir}ProximaNova/ProximaNova-BoldIt', bold, italic)
+@include font-face($mainFontName, '#{$fontdir}ProximaNova/ProximaNova-Light', 200, normal)
+
+@include font-face($decorativeFontName, '#{$fontdir}PlayfairDisplay/PlayfairDisplay-Regular', normal, normal)
+@include font-face($decorativeFontName, '#{$fontdir}PlayfairDisplay/PlayfairDisplay-Bold', bold, normal)
+@include font-face($decorativeFontName, '#{$fontdir}PlayfairDisplay/PlayfairDisplay-BoldItalic', bold, italic)
+@include font-face($decorativeFontName, '#{$fontdir}PlayfairDisplay/PlayfairDisplay-Italic', normal, italic)
+

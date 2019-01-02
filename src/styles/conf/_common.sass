@@ -1,0 +1,132 @@
+html, body 
+  min-height: 100%
+  overflow-x: hidden
+  -webkit-overflow-scrolling: touch
+  -ms-overflow-style: scrollbar
+
+
+body 
+  scroll-behavior: smooth
+  & * 
+    margin: 0
+    padding: 0
+    border: 0
+    text-decoration: none
+  
+  position: relative
+  font: 
+    family: $mainFont
+    size: 18px
+  
+  line-height: 1.5em
+  word-break: break-word
+  hyphens: auto
+  -webkit-hyphenate-before: 2
+  -webkit-hyphenate-after: 3
+  hyphenate-lines: 3
+  background-color: $background
+  color: $darkGray
+
+
+// main * + *:not(.catalogForm *)
+//   margin-top:  1.5rem
+//   &:not(p):not(img):not(picture)
+//     margin-top:  3rem
+//     margin-bottom: 3rem
+
+li, dt, th, td, tr
+  margin-top:  0
+
+
+h1 
+  font-size: em(47.12)
+  @include breakpoint($xs)
+    font-size: em(41.8868)
+  @include breakpoint($xxs)
+    font-size: 7.6vw
+  
+
+h2 
+  font-size: $s29
+
+h3
+  font-size: $s25
+h1, h2, h3, h4, h5, h6  
+  font-family: $decorativeFont
+  // text-transform: uppercase
+  line-height: 1.5em
+  
+  letter-spacing: .12em
+  font-weight: normal
+  word-break: break-word
+
+li, dd, td, dt, tr
+  margin-top:  $s18
+ul
+  list-style: none
+
+li
+  // padding-left: 1rem
+
+  &:before
+    content: "\25EF"
+    position: relative
+    top: em(-2.5)
+    margin-right: $s6
+    font-size: $s11
+
+nav li
+  margin-top: 0
+  &:before
+    content: none
+
+
+p, li 
+  max-width: 60rem
+// p:first-of-type
+//   margin-top:  $s47 
+p
+  margin-top: $s29
+ul
+  list-style: none
+a 
+  transition: color .2s ease-in, background.2s ease-in
+  color: $darkGray
+
+  background-image: linear-gradient(to right, $darkGray  0%, $darkGray 100%)
+  &, &:hover, &:focus, &:active
+    text-decoration: none
+    background-repeat: repeat-x
+    background-position: bottom
+    background-size: 1px 1px
+  &.lightenHover
+    &:hover, &:focus, &:active 
+      $darkenGreen: darken($green, 30%)
+      color: $darkenGreen
+      background-image: linear-gradient(to right, $darkenGreen 0%, $darkenGreen 100%)
+      // color: $pink
+      // background-image: linear-gradient(to right, $pink 0%, $pink 100%)
+    // $$darkGray: darken($darkGray, 25%)
+  &.darkenLink
+    color: $burgund
+    background-image: linear-gradient(to right, $burgund 0%, $burgund 100%)    
+
+  // &.darkGreenHover 
+  //   color: $burgund
+  //   background-image: linear-gradient(to right, $darkenGreen 0%, $darkenGreen 100%)    
+  &.darkenHover   
+    &:hover, &:focus, &:active 
+      color: $burgund
+      background-image: linear-gradient(to right, $burgund 0%, $burgund 100%)
+  
+.mainColor
+  color: #FA8BC4
+.burgund
+  color: $burgund
+
+button
+  background-color: transparent
+input, textarea
+  @include placehodler-color($gray)
+img
+  width: 100%

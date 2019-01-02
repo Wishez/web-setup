@@ -1,0 +1,24 @@
+// $figures: ('shopping-bag', 'shopping_bag.png', 512, 512, em(56, 21), true), ('callback', 'callback.png', 512, 512, em(101, 21), true),  ('contacts', 'contacts.png', 512, 512, em(87, 21), true), ('callback_name', 'white_user.png', 512, 512, em(33, 21), true), ('callback_phone', 'white-phone.png', 512, 512, em(35, 21), true), ('full_name', 'user.png', 512, 512, em(35, 21), true), ('email', 'envelope.png', 512, 512, em(35, 21), true);
+
+
+// @each $name, $url, $height, $width, $max-width, $isIcon in $figures 
+	
+// 	@include adaptiveImage($name, $max-width, adaptive($width, $height), $url, $isIcon)
+
+.imageContainer
+	// margin-top: 1rem
+	// margin-bottom: 	1rem
+	z-index: 1
+	&__image
+		// margin-top: 1.5rem
+		// margin-bottom: 	1.5rem
+		&_sample
+			margin-top: 0
+	&_programmItem
+		box-shadow: none
+
+	
+
+.successfull
+	& .orderButtons
+		margin-top: em(24)

@@ -1,0 +1,82 @@
+$susy: (use-custom: (em: true), columns: 12, gutters: 0, gutter-position: split, global-box-sizing: border-box)
+$i: !important
+@include border-box-sizing
+$border-box-sizing : true
+$gutters: 0
+
+.grid
+	&_four
+		min-width: 33%
+
+.fourWithPadding
+	min-width: calc(33% - #{$s29})
+.grow	
+	flex-grow: 1
+.fullWidth
+	min-width: 100%
+	&_xs
+		@include breakpoint($xs)
+			min-width: 100% !important
+	&_xxs
+		@include breakpoint($xxs)
+			min-width: 100% !important
+.notRestAlone:nth-last-child(2):nth-child(4n)
+	min-width: 66%
+
+.halfWidth
+	min-width: 50%
+	&_xs
+		@include breakpoint($xs)
+			min-width: 50% 
+
+.parent 
+	display: flex
+
+	&_force
+		display: flex $i
+
+.row
+	flex-direction: row
+.wrap
+	flex-wrap: wrap
+.nowrap
+	flex-wrap: nowrap
+.column
+	flex-direction:  column 
+
+.baseChild 
+	flex: 1 0 20%
+.littleChild
+	flex: 0 0 25%
+	margin-bottom: $s47
+.h-around
+	justify-content: space-around
+.h-between
+	justify-content: space-between
+.h-start
+	justify-content: flex-start
+.h-end
+	justify-content: flex-end
+.h-centered
+	justify-content: center
+.h-s-end
+	justify-self: flex-end
+.h-s-start
+	justify-self: flex-start
+.h-s-centered
+	justify-self: center
+.v-centered
+	align-items: center
+.v-start
+	align-items: flex-start
+.v-end
+	align-items: flex-end
+.v-s-end
+	align-self: flex-end
+.v-s-start
+	align-self: flex-start
+.v-s-centered
+	align-self: center
+.centered 
+	justify-content: center
+	align-items: center
