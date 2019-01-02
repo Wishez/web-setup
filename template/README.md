@@ -1,4 +1,4 @@
-# ori_app
+# Webpack Template for making Web
 
 > A Vue.js project
 
